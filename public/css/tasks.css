@@ -1,0 +1,15 @@
+.counter-row {
+    height: 30px;
+}
+
+.counter-col {
+    border: 3px solid #ECECEC;
+}
+
+#editTaskContainer,#addTaskContainer{
+    margin-top: 20px;
+}
+
+.counter.badge {
+    font-size: 100%;
+}
