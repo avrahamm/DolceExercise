@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Restful API to manage tasks Resource.
+ */
 namespace App\Http\Controllers;
 
 use App\Task;
