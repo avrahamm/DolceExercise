@@ -32,8 +32,7 @@ class TasksController extends Controller
     public function store(Request $request)
     {
         $attributes =$this->validate($request, [
-            'title' => ['required','min:3'],
-            'description' => ['required','min:3'],
+            'name' => ['required','min:3'],
         ]);
         $task = Task::create($attributes);
         $message = [
@@ -69,8 +68,8 @@ class TasksController extends Controller
     public function update(Request $request, Task $task)
     {
         $attributes =$this->validate($request, [
-            'title' => ['required','min:3'],
-            'description' => ['required','min:3'],
+            'status' => ['required'],
+            'name' => ['required','min:3'],
         ]);
         $task->update($attributes);
         $response = [
@@ -90,9 +89,11 @@ class TasksController extends Controller
      */
     public function destroy(Task $task)
     {
+        $status = $task->status;
         $task->delete();
         $response = [
             'msg' => 'Task deleted',
+            'status' => $status,
         ];
         return response()->json($response, 200);
     }

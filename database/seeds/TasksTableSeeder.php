@@ -13,6 +13,7 @@ class TasksTableSeeder extends Seeder
     {
         $task1 = new \App\Task([
             'name' => str_random(10),
+            'status' => 1,
         ]);
         $task1->save();
 
