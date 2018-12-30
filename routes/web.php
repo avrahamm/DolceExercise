@@ -11,11 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 // initial page
-Route::get('/tasks', function () {
+Route::get('/', function () {
     return view('projects.index');
 });

@@ -26,7 +26,7 @@ $(document).ready(function() {
     function renderTasks(){
         $.ajax({
             type : "GET",
-            url : window.location.origin + "/api/v1/task",
+            url : window.location.href + "api/v1/task",
             success: function(result){
                 let totalCounter = parseInt('0',10);
                 let completedCounter =  parseInt('0',10);
@@ -45,8 +45,8 @@ $(document).ready(function() {
                 updateCountersByDiff(totalCounter,completedCounter,remainingCounter);
             },
             error : function(e) {
-                alert("ERROR: " + e.responseJSON.message);
-                console.log("ERROR: " + e.responseJSON.message);
+                alert("ERROR: Server failed ");
+                console.log("ERROR: Server failed ");
             }
         });
     }
@@ -153,7 +153,7 @@ $(document).ready(function() {
         }
         $.ajax({
             type : "POST",
-            url : window.location.origin + "/api/v1/task",
+            url : window.location.href + "api/v1/task",
             data:{
                 name: newTaskName,
             },
@@ -209,7 +209,7 @@ $(document).ready(function() {
         }
         $.ajax({
             type : "PATCH",
-            url : window.location.origin + "/api/v1/task/"+taskId,
+            url : window.location.href + "api/v1/task/"+taskId,
             data:{
                 status: status=== true ? 1 : 0,
                 name: updatedTaskName,
@@ -257,7 +257,7 @@ $(document).ready(function() {
         let taskId = buttonId.split("-")[1];
         $.ajax({
             type : "DELETE",
-            url : window.location.origin + "/api/v1/task/" + taskId,
+            url : window.location.href + "api/v1/task/" + taskId,
             success: function(result){
                 let deletedTaskStatus = result.status;
                 // delete row
