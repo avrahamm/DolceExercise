@@ -13,5 +13,6 @@
 
 // initial page
 Route::get('/', function () {
-    return view('projects.index');
+    $apiPath = "http://".request()->getHost().request()->getBaseUrl();
+    return view('projects.index', ['apiPath' => $apiPath]);
 });
