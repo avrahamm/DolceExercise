@@ -15,7 +15,7 @@ Steps to create:
 - php artisan key:generate
 - initialize tables and seed some tasks data.
 - php artisan migrate --seed
-- prepare virtual host of your choice, lets say http://dolce/
+- prepare virtual host of your choice, lets say http://dolce/ and open
 or open http://localhost/path-to-public-folder/public/
-# Now you should be able to open http://dolce/
+
  
